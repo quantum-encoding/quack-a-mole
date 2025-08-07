@@ -130,3 +130,7 @@ config/
 
 # Charts (all visualizations)
 charts/
+
+# REAL IMPLEMENTATION (The actual system, not the joke)
+real-quack/
+!real-quack/README.md
