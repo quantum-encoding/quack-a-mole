@@ -51,6 +51,7 @@ pub struct WhackResult {
 }
 
 #[derive(Debug)]
+#[allow(dead_code)]
 pub enum MoleError {
     OutOfBounds,
     MoleEscaped,
