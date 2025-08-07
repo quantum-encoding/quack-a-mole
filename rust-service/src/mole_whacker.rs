@@ -1,6 +1,6 @@
 use std::sync::Arc;
 use std::sync::atomic::{AtomicU64, Ordering};
-use std::time::{Duration, Instant};
+use std::time::Instant;
 use tokio::sync::RwLock;
 use serde::{Deserialize, Serialize};
 use axum::Json;
@@ -16,6 +16,7 @@ pub struct MoleWhacker {
 }
 
 #[derive(Clone, Copy, Debug)]
+#[allow(dead_code)]
 enum HammerType {
     Foam,        // Safe for production
     Rubber,      // Medium impact
@@ -24,6 +25,7 @@ enum HammerType {
 }
 
 #[derive(Clone, Copy, Debug)]
+#[allow(dead_code)]
 enum MoleStatus {
     Hidden,
     Emerging,
@@ -136,7 +138,7 @@ impl MoleWhacker {
         // TODO: Implement actual SIMD operations
         for x in 0..100 {
             for y in 0..100 {
-                if matches!(self.detection_grid[x][y], MoleStatus::Exposed | MoleStatus::Emerging) {
+                if matches!(self.detection_grid[x][y], MoleStatus::Exposed) {
                     moles.push((x, y));
                 }
             }
