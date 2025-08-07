@@ -141,7 +141,7 @@ func (ws *WhackService) performWhack(req WhackRequest) (bool, int, bool) {
 		stylePoints += ws.calculateStylePoints(req, timeSinceLastWhack)
 	}
 
-	return success, stylePoints, false
+	return success, stylePoints, moleEscaped
 }
 
 // calculateStylePoints awards points for style
