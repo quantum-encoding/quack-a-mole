@@ -39,7 +39,8 @@ export class DuckAPI {
       return {
         mood: mlResponse.data.mood,
         quantumState: 'superposition',
-        entangledDucks: Math.floor(Math.random() * 10)
+        entangledDucks: Math.floor(Math.random() * 10),
+        quackResponse: response.data // Use the response data
       };
     } catch (error) {
       console.error('Quack API error:', error);

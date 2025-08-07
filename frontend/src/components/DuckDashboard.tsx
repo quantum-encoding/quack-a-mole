@@ -39,7 +39,7 @@ export const DuckDashboard: React.FC = () => {
     const moleInterval = setInterval(checkForMoles, 1000);
 
     return () => clearInterval(moleInterval);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const initializePondMatrix = () => {
     // Create a 10x10 grid of pond positions
