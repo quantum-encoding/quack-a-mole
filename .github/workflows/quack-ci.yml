@@ -134,7 +134,7 @@ jobs:
       - name: Build all services
         run: |
           echo "🐳 Building containerized waterfowl..."
-          docker-compose build --parallel
+          docker compose build --parallel
       
       - name: Check duck deployment readiness
         run: |
