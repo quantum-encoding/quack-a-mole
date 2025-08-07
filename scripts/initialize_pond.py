@@ -78,7 +78,10 @@ def initialize_pond(duck_count=100, mole_status="suspicious"):
     
     for key, value in diagnostics.items():
         status = "✅" if (isinstance(value, (int, float)) and value > 0.5) or value in ["low", "medium"] else "⚠️"
-        print(f"   {status} {key.replace('_', ' ').title()}: {value:.2f if isinstance(value, float) else value}")
+        if isinstance(value, float):
+            print(f"   {status} {key.replace('_', ' ').title()}: {value:.2f}")
+        else:
+            print(f"   {status} {key.replace('_', ' ').title()}: {value}")
     
     # Save configuration
     config = {
