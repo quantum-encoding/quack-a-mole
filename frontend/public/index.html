@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#4ECDC4" />
+    <meta name="description" content="Enterprise-grade Duck Management System with Quantum Quacking Technology" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/duck-icon.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>🦆 Quack-a-Mole | Quantum Duck Command Center</title>
+    
+    <style>
+      /* Loading screen animation */
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .duck-loader {
+        font-size: 100px;
+        animation: float 2s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      
+      .loading-text {
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        font-size: 24px;
+        margin-top: 20px;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+      
+      .quantum-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      
+      .particle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        animation: drift 10s infinite linear;
+      }
+      
+      @keyframes drift {
+        from { transform: translateY(100vh) rotate(0deg); }
+        to { transform: translateY(-100px) rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run the Quantum Duck Command Center.</noscript>
+    
+    <div id="loading-screen">
+      <div class="quantum-particles" id="particles"></div>
+      <div class="duck-loader">🦆</div>
+      <div class="loading-text">Initializing Quantum Ducks...</div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Create quantum particles
+      const particlesContainer = document.getElementById('particles');
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.width = particle.style.height = Math.random() * 10 + 5 + 'px';
+        particle.style.animationDelay = Math.random() * 10 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particlesContainer.appendChild(particle);
+      }
+      
+      // Hide loading screen when React app loads
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+              loadingScreen.style.display = 'none';
+            }, 500);
+          }
+        }, 1000);
+      });
+      
+      // Console easter eggs
+      console.log('%c🦆 QUACK!', 'font-size: 50px; color: #FFD700;');
+      console.log('%cWelcome to the Quantum Duck Command Center!', 'font-size: 16px; color: #4ECDC4;');
+      console.log('%cThe ducks are watching...', 'font-size: 12px; color: #888; font-style: italic;');
+      
+      // Konami code easter egg
+      let konamiCode = [];
+      const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+      
+      document.addEventListener('keydown', (e) => {
+        konamiCode.push(e.key);
+        konamiCode = konamiCode.slice(-10);
+        
+        if (konamiCode.join(',') === konamiPattern.join(',')) {
+          console.log('%c🐙 THE QUACKEN HAS BEEN RELEASED!', 'font-size: 30px; color: #FF0000;');
+          document.body.style.animation = 'shake 0.5s';
+          setTimeout(() => {
+            document.body.style.animation = '';
+          }, 500);
+        }
+      });
+      
+      // Add shake animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes shake {
+          0%, 100% { transform: translateX(0); }
+          25% { transform: translateX(-10px); }
+          75% { transform: translateX(10px); }
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>

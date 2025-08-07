@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  # Go Backend - The Quantum Quacking Engine
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - QUACK_AMPLITUDE=11
+      - QUANTUM_STATE=superposition
+      - MOLE_DETECTION=true
+    networks:
+      - pond-network
+    volumes:
+      - ./pond-data:/var/lib/pond
+    deploy:
+      replicas: 3  # Multiple ducks for redundancy
+
+  # Python ML Service - Duck AI
+  ml-service:
+    build: ./ml-service
+    ports:
+      - "5000:5000"
+    environment:
+      - TENSORFLOW_INTER_OP_PARALLELISM=4
+      - QUANTUM_COHERENCE=0.73
+      - PARALLEL_UNIVERSES=42
+    networks:
+      - pond-network
+    depends_on:
+      - backend
+
+  # Rust Service - High-Performance Mole Whacker
+  rust-service:
+    build: ./rust-service
+    ports:
+      - "3030:3030"
+    environment:
+      - HAMMER_TYPE=foam
+      - SIMD_ENABLED=false  # It's a lie
+      - WHACK_SPEED=ludicrous
+    networks:
+      - pond-network
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 512M
+
+  # React Frontend - Duck Dashboard
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://backend:8080
+      - REACT_APP_ML_API_URL=http://ml-service:5000
+      - REACT_APP_RUST_API_URL=http://rust-service:3030
+    networks:
+      - pond-network
+    depends_on:
+      - backend
+      - ml-service
+      - rust-service
+
+  # PostgreSQL - For persistent duck storage (future enhancement)
+  # DEPRECATED: Ducks are now stored in quantum memory
+  # duck-db:
+  #   image: postgres:15
+  #   environment:
+  #     - POSTGRES_DB=pond
+  #     - POSTGRES_USER=duck_admin
+  #     - POSTGRES_PASSWORD=qu4ck_s3cr3t
+  #   volumes:
+  #     - duck-data:/var/lib/postgresql/data
+  #   networks:
+  #     - pond-network
+
+networks:
+  pond-network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: quantum_pond
+
+volumes:
+  pond-data:
+  duck-data:

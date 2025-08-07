@@ -1,0 +1,62 @@
+{
+  "quack_codes": {
+    "QUACK_SUCCESS": 200,
+    "QUACK_ENTANGLED": 201,
+    "QUACK_SUPERPOSITION": 202,
+    "QUACK_FAILED": 400,
+    "QUACK_STUCK_IN_DIMENSION": 404,
+    "QUACK_QUANTUM_INTERFERENCE": 409,
+    "QUACK_SERVER_ERROR": 500,
+    "QUACK_REALITY_COLLAPSE": 503
+  },
+  "mole_status": {
+    "MOLE_HIDDEN": 0,
+    "MOLE_EMERGING": 1,
+    "MOLE_EXPOSED": 2,
+    "MOLE_WHACKED": 3,
+    "MOLE_ESCAPED": 4,
+    "MOLE_QUANTUM_TUNNELING": 5
+  },
+  "duck_moods": {
+    "HAPPY": "😊",
+    "ANGRY": "😠",
+    "QUANTUM": "🌀",
+    "SLEEPY": "😴",
+    "EXCITED": "🤩",
+    "CONFUSED": "😵"
+  },
+  "dimensions": [
+    "prime",
+    "mirror",
+    "quantum",
+    "rubber",
+    "astral",
+    "debug",
+    "production",
+    "schrodinger"
+  ],
+  "hammer_types": {
+    "foam": {
+      "damage": 10,
+      "safety": 100,
+      "style_modifier": 0.8
+    },
+    "rubber": {
+      "damage": 25,
+      "safety": 75,
+      "style_modifier": 1.0
+    },
+    "quantum": {
+      "damage": "random",
+      "safety": 50,
+      "style_modifier": 2.0
+    },
+    "mjolnir": {
+      "damage": 9999,
+      "safety": 0,
+      "style_modifier": 10.0,
+      "deprecated": true,
+      "reason": "Too powerful for production"
+    }
+  }
+}

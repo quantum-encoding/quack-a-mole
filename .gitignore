@@ -1,0 +1,135 @@
+# Dependencies
+node_modules/
+vendor/
+target/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build outputs
+build/
+dist/
+*.exe
+*.dll
+*.so
+*.dylib
+bin/
+obj/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Testing
+coverage/
+*.cover
+.coverage
+.pytest_cache/
+.phpunit.result.cache
+
+# Docker
+docker-compose.override.yml
+
+# Go
+go.sum
+vendor/
+
+# Rust
+Cargo.lock
+target/
+
+# Python
+*.egg-info/
+dist/
+*.whl
+
+# Frontend
+.cache/
+.parcel-cache/
+
+# Pond data (contains live ducks)
+pond-data/
+pond_config.json
+duck-data/
+
+# Quantum states (unstable)
+quantum_states/
+entanglement_logs/
+
+# Mole tracking
+mole_holes.db
+whack_history.json
+
+# Production secrets
+*.pem
+*.key
+*.crt
+*.p12
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+temp/
+
+# The Quacken (DO NOT RELEASE)
+.quacken
+quacken_seal.lock
+
+# Debug dumps
+core
+*.stackdump
+*.dmp
+
+# Performance benchmarks
+benchmark_results/
+quack_metrics.csv
+
+# Documentation build
+docs/_build/
+site/
+
+# Package manager
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Codebase analysis archives
+/home/rich/codebase_archive/
+20250802_024919/
+20250807_*/
+codebase-navigator-output/
+
+# Config directory (local config)
+config/
+
+# Charts (all visualizations)
+charts/

@@ -1,0 +1,8 @@
+numpy==1.24.3
+tensorflow==2.13.0
+flask==2.3.2
+flask-cors==4.0.0
+scipy==1.11.1
+pillow==10.0.0
+soundfile==0.12.1
+librosa==0.10.0

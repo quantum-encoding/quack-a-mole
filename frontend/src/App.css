@@ -1,0 +1,284 @@
+/* Main App Styles */
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Duck Dashboard */
+.duck-dashboard {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.duck-dashboard h1 {
+  color: white;
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: duck-float 3s ease-in-out infinite;
+}
+
+@keyframes duck-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Alert Status */
+.alert-status {
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card h3 {
+  color: #764ba2;
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+}
+
+.stat-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Pond Visualization */
+.pond-visualization {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pond-visualization h3 {
+  color: #764ba2;
+  margin-bottom: 15px;
+}
+
+.pond-grid {
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  gap: 2px;
+  background: #4ECDC4;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.pond-row {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+}
+
+.pond-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  min-height: 30px;
+  background: rgba(78, 205, 196, 0.2);
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.pond-cell:hover {
+  transform: scale(1.2);
+  background: rgba(78, 205, 196, 0.4);
+}
+
+/* Control Panel */
+.control-panel {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.quack-button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.quack-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.quack-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+@keyframes quantum-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(78, 205, 196, 0.8);
+  }
+}
+
+.whack-button {
+  background: #FF6B6B;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.whack-button:hover:not(:disabled) {
+  background: #FF5252;
+  transform: scale(1.05);
+}
+
+.whack-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.emergency-button {
+  background: linear-gradient(45deg, #FF0000, #8B0000);
+  color: white;
+  font-size: 20px;
+  padding: 15px 30px;
+  border: 3px solid #8B0000;
+  border-radius: 15px;
+  cursor: pointer;
+  animation: emergency-pulse 1s infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes emergency-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+  }
+}
+
+.emergency-button:hover {
+  transform: scale(1.1);
+  animation-duration: 0.5s;
+}
+
+/* Mole Radar */
+.mole-radar {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: #00FF00;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mole-radar h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.radar-display {
+  margin: 0 auto 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.radar-info {
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+.radar-info p {
+  margin: 5px 0;
+}
+
+@keyframes mole-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Quack History */
+.quack-history {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.quack-history h3 {
+  color: #764ba2;
+  margin-bottom: 15px;
+}
+
+.quack-history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quack-history li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(78, 205, 196, 0.1);
+  border-left: 4px solid #4ECDC4;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  transition: background 0.3s ease;
+}
+
+.quack-history li:hover {
+  background: rgba(78, 205, 196, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .duck-dashboard h1 {
+    font-size: 2em;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .control-panel {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .control-panel button {
+    width: 100%;
+    max-width: 300px;
+  }
+}

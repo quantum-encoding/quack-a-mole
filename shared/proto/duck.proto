@@ -1,0 +1,220 @@
+syntax = "proto3";
+
+package duckpond;
+
+option go_package = "github.com/quantum-ducks/quack-a-mole/proto";
+
+// Service definitions for Duck-related operations
+service DuckService {
+  // Emit a quantum quack
+  rpc EmitQuack(QuackRequest) returns (QuackResponse);
+  
+  // Get duck status
+  rpc GetDuckStatus(DuckStatusRequest) returns (DuckStatusResponse);
+  
+  // Entangle two ducks
+  rpc EntangleDucks(EntangleRequest) returns (EntangleResponse);
+  
+  // Release the Quacken (EMERGENCY ONLY)
+  rpc ReleaseTheQuacken(QuackenRequest) returns (QuackenResponse);
+}
+
+// Service for Mole-related operations
+service MoleService {
+  // Whack a mole
+  rpc WhackMole(WhackRequest) returns (WhackResponse);
+  
+  // Detect moles using SIMD
+  rpc DetectMoles(DetectRequest) returns (DetectResponse);
+  
+  // Get mole statistics
+  rpc GetMoleStats(StatsRequest) returns (StatsResponse);
+}
+
+// Service for Pond management
+service PondService {
+  // Get pond status
+  rpc GetPondStatus(PondStatusRequest) returns (PondStatusResponse);
+  
+  // Create ripple effect
+  rpc CreateRipple(RippleRequest) returns (RippleResponse);
+  
+  // Manage water level
+  rpc ManageWaterLevel(WaterLevelRequest) returns (WaterLevelResponse);
+}
+
+// Messages for Duck operations
+message QuackRequest {
+  string duck_id = 1;
+  double intensity = 2;
+  QuantumState quantum_state = 3;
+  string dimension = 4;
+  bool entangle_nearby = 5;
+}
+
+message QuackResponse {
+  bool success = 1;
+  string quack_id = 2;
+  double resonance_frequency = 3;
+  repeated string entangled_ducks = 4;
+  string message = 5;
+}
+
+message DuckStatusRequest {
+  string duck_id = 1;
+}
+
+message DuckStatusResponse {
+  string duck_id = 1;
+  DuckMood mood = 2;
+  double quantum_coherence = 3;
+  Position position = 4;
+  bool is_entangled = 5;
+  repeated string entangled_with = 6;
+}
+
+message EntangleRequest {
+  string duck1_id = 1;
+  string duck2_id = 2;
+  double entanglement_strength = 3;
+}
+
+message EntangleResponse {
+  bool success = 1;
+  double correlation = 2;
+  string warning = 3;
+}
+
+message QuackenRequest {
+  string authorization_code = 1;  // Must be "release-the-quacken"
+  bool confirm = 2;
+}
+
+message QuackenResponse {
+  bool released = 1;
+  string message = 2;
+  int32 ducks_affected = 3;
+  string warning = 4;
+}
+
+// Messages for Mole operations
+message WhackRequest {
+  int32 x = 1;
+  int32 y = 2;
+  string force = 3;
+  HammerType hammer_type = 4;
+}
+
+message WhackResponse {
+  bool success = 1;
+  int32 style_points = 2;
+  double whack_latency_ms = 3;
+  bool mole_escaped = 4;
+  string message = 5;
+}
+
+message DetectRequest {
+  bool use_simd = 1;
+  int32 grid_size = 2;
+}
+
+message DetectResponse {
+  repeated MoleLocation moles = 1;
+  int32 total_detected = 2;
+  string detection_method = 3;
+}
+
+message StatsRequest {
+  // Empty request
+}
+
+message StatsResponse {
+  int64 total_whacks = 1;
+  int64 successful_whacks = 2;
+  int64 moles_escaped = 3;
+  double success_rate = 4;
+  double average_latency_ns = 5;
+}
+
+// Messages for Pond operations
+message PondStatusRequest {
+  // Empty request
+}
+
+message PondStatusResponse {
+  double water_level = 1;
+  double temperature = 2;
+  int32 duck_count = 3;
+  int32 active_moles = 4;
+  int32 ripple_count = 5;
+  repeated string warnings = 6;
+}
+
+message RippleRequest {
+  double x = 1;
+  double y = 2;
+  double amplitude = 3;
+}
+
+message RippleResponse {
+  bool created = 1;
+  int32 ripple_id = 2;
+}
+
+message WaterLevelRequest {
+  double target_level = 1;
+  double rate = 2;  // Liters per second
+}
+
+message WaterLevelResponse {
+  double current_level = 1;
+  double target_level = 2;
+  double estimated_time_seconds = 3;
+}
+
+// Shared message types
+message Position {
+  double x = 1;
+  double y = 2;
+  double z = 3;  // For 3D quantum tunneling
+}
+
+message MoleLocation {
+  int32 x = 1;
+  int32 y = 2;
+  MoleStatus status = 3;
+}
+
+// Enums
+enum QuantumState {
+  QUANTUM_UNKNOWN = 0;
+  QUANTUM_IDLE = 1;
+  QUANTUM_QUACKING = 2;
+  QUANTUM_ENTANGLED = 3;
+  QUANTUM_SUPERPOSITION = 4;
+}
+
+enum DuckMood {
+  MOOD_UNKNOWN = 0;
+  MOOD_HAPPY = 1;
+  MOOD_ANGRY = 2;
+  MOOD_QUANTUM = 3;
+  MOOD_SLEEPY = 4;
+  MOOD_EXCITED = 5;
+}
+
+enum MoleStatus {
+  MOLE_HIDDEN = 0;
+  MOLE_EMERGING = 1;
+  MOLE_EXPOSED = 2;
+  MOLE_WHACKED = 3;
+  MOLE_QUANTUM_TUNNELING = 4;
+}
+
+enum HammerType {
+  HAMMER_UNKNOWN = 0;
+  HAMMER_FOAM = 1;
+  HAMMER_RUBBER = 2;
+  HAMMER_QUANTUM = 3;
+  HAMMER_MJOLNIR = 4;  // DEPRECATED: Too powerful
+}
